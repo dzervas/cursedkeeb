@@ -11,8 +11,7 @@ in pkgs.mkShell {
   inherit buildInputs;
 
   shellHook = ''
-    export "LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${lib-path}"
-    LD_LIBRARY_PATH=lib.makeLibraryPath [ pkgs.stdenv.cc.cc ];
+    export LD_LIBRARY_PATH=${lib-path}
     echo "Welcome to the build123d development environment!"
   '';
 }
