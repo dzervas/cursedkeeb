@@ -17,10 +17,12 @@ keycap_gap = 1
 single = stem_spacing + stem_width
 
 with BuildPart() as bp:
-    Box(single, single, thickness)
-    with Locations(Vector(0, 0, -stem_height/2 - thickness/2)):
+    keycap = Box(single, single, thickness)
+    with Locations(Vector(0, 0, -(stem_height + thickness)/2)):
         Box(stem_width+walls, stem_width+walls, stem_height)
         Box(stem_width, stem_width, stem_height, mode=Mode.SUBTRACT)
 
+    chamfer(keycap.edges().group_by()[-1], thickness/2)
+
 show(bp, axes=True, axes0=True, grid=(True, True, True), transparent=True)
-export_stl(bp, "keycap.stl")
+export_stl(bp.part, "keycap.stl")
