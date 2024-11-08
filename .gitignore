@@ -177,3 +177,6 @@ pyrightconfig.json
 
 *.stl
 *.step
+
+*.hex
+*.uf2

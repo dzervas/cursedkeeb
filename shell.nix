@@ -5,6 +5,9 @@
     libGL
     xorg.libX11
     zlib
+
+    flip-link
+    cargo-make
   ];
   lib-path = with pkgs; lib.makeLibraryPath buildInputs;
 in pkgs.mkShell {
