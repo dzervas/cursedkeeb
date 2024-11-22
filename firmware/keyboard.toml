@@ -5,18 +5,20 @@ vendor_id = 0x4c4b
 product_id = 0x4643
 manufacturer = "dzervas"
 chip = "nrf52840"
+usb_enable = true
 
 [matrix]
 # Input and output pins are mandatory
-input_pins = ["P1_01", "P1_02", "P1_07"]
+input_pins = ["P0_02", "P0_03", "P0_28"]
 output_pins = ["MI20_A0", "MI20_A1", "MI20_A2", "MI20_A3"]
+# output_pins = ["P1_02", "P1_03", "P1_04", "P1_05"]
 # WARNING: Currently row2col/col2row is set in RMK's feature gate, configs here do nothing actually
 # row2col = true
 
 [layout]
 rows = 4
 cols = 3
-layers = 2
+layers = 1
 keymap = [
 	[
 		[
@@ -25,41 +27,19 @@ keymap = [
 			"C",
 		],
 		[
-			"Kc1",
-			"Kc2",
-			"Kc3",
+			"D",
+			"E",
+			"F",
 		],
 		[
-			"LCtrl",
-			"MO(1)",
-			"LShift",
+			"G",
+			"H",
+			"I",
 		],
 		[
-			"OSL(1)",
-			"LT(2, Kc9)",
-			"LM(1, LShift | LGui)",
-		],
-	],
-	[
-		[
-			"_",
-			"TT(1)",
-			"TG(2)",
-		],
-		[
-			"_",
-			"_",
-			"_",
-		],
-		[
-			"_",
-			"_",
-			"_",
-		],
-		[
-			"_",
-			"_",
-			"_",
+			"J",
+			"K",
+			"L",
 		],
 	],
 ]
@@ -91,4 +71,4 @@ mcp23017_enabled = true
 i2c_enabled = true
 i2c_sda = "P0_04"
 i2c_scl = "P0_05"
-# i2c_freq_khz = 100
+i2c_freq_khz = 100
