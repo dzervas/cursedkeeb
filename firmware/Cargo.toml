@@ -4,39 +4,25 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-rmk = { path = "../../rmk/rmk", default-features = false, features = [
-	# rmk = { git = "https://github.com/HaoboGu/rmk", version = "0.4.1", features = [
-	"async_matrix",
-	"nrf52840_ble",
-	"mcp23017",
+# rmk = { path = "../../rmk/rmk", default-features = false, features = [
+rmk = { git = "https://github.com/HaoboGu/rmk", version = "0.4.2", default-features = false, features = [
+    # "async_matrix",
+    "esp32s3_ble",
 ] }
 
-cortex-m = "0.7.7"
-cortex-m-rt = "0.7.3"
-embassy-time = { version = "0.3", features = ["tick-hz-32_768", "defmt"] }
-embassy-nrf = { version = "0.2.0", features = [
-	"defmt",
-	"nrf52840",
-	"time-driver-rtc1",
-	"gpiote",
-	"unstable-pac",
-	"nfc-pins-as-gpio",
-	"time",
-] }
-embassy-executor = { version = "0.6", features = [
-	"defmt",
-	"task-arena-size-32768",
-	"arch-cortex-m",
-	"executor-thread",
-	"integrated-timers",
-] }
 defmt = "0.3"
-defmt-rtt = "0.4"
-panic-probe = { version = "0.3", features = ["print-rtt"] }
-embedded-hal = "1.0.0"
-heapless = "0.8.0"
-embassy-sync = "0.6.0"
-port-expander = "0.6.3"
+esp32-nimble = { version = "0.8" }
+embassy-time = { version = "0.3.0", features = ["defmt", "generic-queue-8"] }
+esp-println = { version = "0.11", features = ["esp32s3", "defmt-espflash"] }
+esp-idf-svc = { version = "0.49", default-features = false, features = [
+    "std",
+    "alloc",
+    "binstart",
+    "embassy-sync",
+    "critical-section",
+    "embassy-time-driver",
+    "native",
+] }
 
 [[bin]]
 name = "cursedkeeb"
@@ -47,7 +33,7 @@ path = "src/main.rs"
 [profile.dev]
 codegen-units = 1      # better optimizations
 debug = true
-opt-level = 1
+opt-level = 3          # esp-wifi should be built with opt-level 2 or 3
 overflow-checks = true
 lto = false
 panic = 'unwind'
@@ -55,11 +41,12 @@ panic = 'unwind'
 [profile.release]
 codegen-units = 1       # better optimizations
 debug = true            # no overhead for bare-metal
-opt-level = "z"         # optimize for binary size
+opt-level = 3           # optimize for binary size
 overflow-checks = false
 lto = "fat"
 
 [build-dependencies]
 const-gen = "1.6.5"
+embuild = "0.32"
 json = "0.12.4"
 xz2 = "0.1.7"

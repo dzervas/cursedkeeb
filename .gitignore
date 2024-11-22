@@ -180,3 +180,4 @@ pyrightconfig.json
 
 *.hex
 *.uf2
+.embuild

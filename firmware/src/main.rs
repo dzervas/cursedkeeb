@@ -1,5 +1,4 @@
-#![no_std]
-#![no_main]
+#![feature(type_alias_impl_trait)]
 
 use rmk::macros::rmk_keyboard;
 
@@ -7,9 +6,3 @@ use rmk::macros::rmk_keyboard;
 // Please put `vial.json` at your project's root
 #[rmk_keyboard]
 mod keyboard {}
-
-// #[panic_handler]
-// fn panic(info: &core::panic::PanicInfo) -> ! {
-    // defmt::info!("panic: {:?}", defmt::Debug2Format(&info));
-    // loop {}
-// }

@@ -9,7 +9,9 @@
     flip-link
     cargo-make
     probe-rs-tools
+    ldproxy
     espflash
+    espup
   ];
   lib-path = with pkgs; lib.makeLibraryPath buildInputs;
 in pkgs.mkShell {
