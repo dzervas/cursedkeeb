@@ -9,36 +9,111 @@ usb_enable = true
 
 [matrix]
 # Input and output pins are mandatory
-output_pins = ["gpio6", "gpio7", "gpio8", "gpio9"]
-input_pins = ["gpio3", "gpio4", "gpio5"]
+output_pins = ["gpio21", "gpio18", "gpio17", "gpio16", "gpio15"]
+input_pins = [
+	"gpio1",
+	"gpio2",
+	"gpio3",
+	"gpio4",
+	"gpio5",
+	"gpio6",
+	"gpio7",
+	"gpio8",
+	"gpio9",
+	"gpio10",
+	"gpio11",
+	"gpio12",
+	"gpio13",
+	"gpio14",
+]
 # WARNING: Currently row2col/col2row is set in RMK's feature gate, configs here do nothing actually
 # row2col = true
 
 [layout]
-rows = 4
-cols = 3
+rows = 5
+cols = 14
 layers = 1
 keymap = [
 	[
 		[
-			"A",
-			"B",
-			"C",
+			"Grave",
+			"Kc1",
+			"Kc2",
+			"Kc3",
+			"Kc4",
+			"Kc5",
+			"Kc6",
+			"Kc7",
+			"Kc8",
+			"Kc9",
+			"Kc0",
+			"Minus",
+			"Equal",
+			"Backslash",
 		],
 		[
-			"D",
+			"Tab",
+			"Q",
+			"W",
 			"E",
-			"F",
+			"R",
+			"Y",
+			"U",
+			"I",
+			"O",
+			"P",
+			"LeftBracket",
+			"RightBracket",
+			"Backspace",
+			"PageUp",
 		],
 		[
+			"Escape",
+			"A",
+			"S",
+			"D",
+			"F",
 			"G",
 			"H",
-			"I",
-		],
-		[
 			"J",
 			"K",
 			"L",
+			"Semicolon",
+			"Quote",
+			"Enter",
+			"PageDown",
+		],
+		[
+			"LShift",
+			"Z",
+			"X",
+			"C",
+			"V",
+			"B",
+			"N",
+			"M",
+			"Comma",
+			"Dot",
+			"Slash",
+			"RShift",
+			"UP",
+			"Insert",
+		],
+		[
+			"LCtrl",
+			"LGui",
+			"LAlt",
+			"No",
+			"No",
+			"Space",
+			"No",
+			"No",
+			"RAlt",
+			"RGui",
+			"RCtrl",
+			"Left",
+			"Down",
+			"Right",
 		],
 	],
 ]
