@@ -1,4 +1,6 @@
-{ pkgs ? import <nixpkgs> {} }: let
+let
+  pkgs = import <nixpkgs> {};
+in pkgs.mkShell rec {
   buildInputs = with pkgs; [
     stdenv.cc.cc.lib
     expat
@@ -9,16 +11,9 @@
     flip-link
     cargo-make
     probe-rs-tools
-    ldproxy
-    espflash
-    espup
   ];
-  lib-path = with pkgs; lib.makeLibraryPath buildInputs;
-in pkgs.mkShell {
-  inherit buildInputs;
 
   shellHook = ''
-    export LD_LIBRARY_PATH=${lib-path}
-    echo "Welcome to the build123d development environment!"
+    export LD_LIBRARY_PATH=${pkgs.lib.makeLibraryPath buildInputs}
   '';
 }
