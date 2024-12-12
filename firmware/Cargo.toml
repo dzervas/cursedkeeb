@@ -4,8 +4,8 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-# rmk = { path = "../../rmk/rmk", default-features = false, features = [
-rmk = { git = "https://github.com/HaoboGu/rmk", version = "0.4.4", default-features = false, features = [
+rmk = { path = "/rmk/rmk", default-features = false, features = [
+    # rmk = { git = "https://github.com/HaoboGu/rmk", version = "0.4.4", default-features = false, features = [
     # "async_matrix",
     "esp32s3_ble",
 ] }

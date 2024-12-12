@@ -22,6 +22,7 @@ fn main() {
 fn generate_vial_config() {
     // Generated vial config file
     let out_file = Path::new(&env::var_os("OUT_DIR").unwrap()).join("config_generated.rs");
+    println!("cargo:warning=Generating vial config at {:?}", out_file);
 
     let p = Path::new("vial.json");
     let mut content = String::new();
