@@ -1535,6 +1535,7 @@ dependencies = [
 [[package]]
 name = "rmk"
 version = "0.4.4"
+source = "git+https://github.com/dzervas/rmk?branch=fix-esp32-input-pull#db74abf8d39c217af6ff4ae54ace885a46a8c7c0"
 dependencies = [
  "bitfield-struct",
  "byteorder",
@@ -1568,6 +1569,7 @@ dependencies = [
 [[package]]
 name = "rmk-macro"
 version = "0.3.3"
+source = "git+https://github.com/dzervas/rmk?branch=fix-esp32-input-pull#db74abf8d39c217af6ff4ae54ace885a46a8c7c0"
 dependencies = [
  "cargo_toml",
  "darling",
